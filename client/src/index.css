@@ -43,7 +43,7 @@
   --chart-3: 345 80% 38%;
   --chart-4: 30 70% 42%;
   --chart-5: 350 75% 35%;
-  --font-sans: Open Sans, sans-serif;
+  --font-sans: Inter, sans-serif;
   --font-serif: Georgia, serif;
   --font-mono: Menlo, monospace;
   --radius: .5rem;
@@ -284,5 +284,20 @@
   .border.active-elevate-2:not(.no-active-interaction-elevate)::after,
   .border.hover-elevate:not(.no-hover-interaction-elevate)::after {
     inset: -1px;
+  }
+
+  @keyframes pulse-marker {
+    0%, 100% {
+      opacity: 0.6;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+  }
+
+  .leaflet-marker-icon {
+    animation: pulse-marker 2s ease-in-out infinite;
   }
 }
